@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>Assignment2</title>
+
+		<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+
+		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+		<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	</head>
+	<body>
+		<h3>UBER AFTER DARK</h3>
+		<p>This visualization features Uber pickup data<sup>*</sup> from the hours of 8:00pm to 5:00am (sunset and sunrise) on May 18th, 2014 in New York City. The data chosen is representative of typical after dark, springtime, pickups for the transportation company in the metro area: the 18th corresponds to the daily median of total rides logged for the month of May. Below, data is filterable by NYC Taxi & Limousine Commision (TLC) dispatch base for each ride.</p>
+		<select class = "base">
+			<option value = "'B02512' OR Base = 'B02512' OR Base = 'B02598' OR  Base ='B02617' OR Base = 'B02682' OR Base = 'B02764'">Any Base</option>
+			<option value = "'B02512'">B02512 | Unter</option>
+			<option value = "'B02598'">B02598 | Hinter</option>
+			<option value = "'B02617'">B02617 | Weiter</option>
+			<option value = "'B02682'">B02682 | Schmecken</option>
+			<option value = "'B02764'">B02764 | Danach-NY</option>	
+		</select>
+		<div id = "map"></div>
+		<p><sup>*</sup>Data utilized came from a directory of over 4.5 million Uber pickups in New York City from April to September 2014, and 14.3 million from January to June 2015 obtained by FiveThirtyEight via the NYC Taxi & Limousine Commission (TLC) as requested through Freedom of Information Law request on July 20, 2015. Read more and find data at: <a href= "https://github.com/fivethirtyeight/uber-tlc-foil-response">https://github.com/fivethirtyeight/uber-tlc-foil-response</a></p>
+	</body>
+</html>
