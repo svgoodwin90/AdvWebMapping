@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	var map = L.map('map').setView([40.731649, -73.977816], 11);
+	var map = L.map('map').setView([40.7362116,-74.026156], 12);
 
 	L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png', {
 		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',

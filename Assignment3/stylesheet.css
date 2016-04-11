@@ -5,6 +5,45 @@ html, body, #map {
   width: 100%;
 }
 
+.overlay{
+  position: absolute; 
+  background-color: transparent; 
+  z-index: 100;
+  color:  #B0B0B0;
+  font-family: "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+}
+
+#title{
+  top:160px; left:100px;
+  width:400px; 
+  height:100px; 
+  font-size: 28px;
+  color: white;
+}
+
+#descrip{
+  top: 220px; left:100px;
+  width:400px; 
+  height:500px; 
+  font-size: 14px;
+}
+
+#sources {  
+  top: 340px; left:100px;
+  width:400px; 
+  height:500px; 
+  font-size: 10px;
+}
+
+a{
+  color: #B0B0B0;
+  a:hover: blue;
+}
+
+a:hover{
+  color: blue;
+}
+
 .leaflet-bottom.leaflet-left{
     width: 100%;
 }
