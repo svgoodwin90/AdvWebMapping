@@ -1,0 +1,88 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>FinalProject</title>
+		<!---Load jquery, jquery ui (slider )and css-->
+		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+		<!---Load cartodb.js-->
+		<script src="http://libs.cartocdn.com/cartodb.js/v3/3.12/cartodb.js"></script>
+ 	 	<link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.12/themes/css/cartodb.css" />
+ 	 	<!---Load mustache.js-->
+ 	 	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
+		<!---Load Leaflet-->
+  		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+  		<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+		<!---Load c3.js-->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.css" rel="stylesheet" />
+		<!---Load Bootstrap-->
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
+		<!---Load css and script-->
+		<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+  		<script type="text/javascript" src="script.js"></script>
+	</head>
+	<body>
+		<div id = "container">
+			<div id = "content">
+				<div id = "map">
+					<div id= "slider-box">
+						<div id= "year-label">
+					  		<label for="amount">Year: </label>
+					  		<input id="amount" readonly>
+					  	</div>
+						<div id="slider"></div>
+					</div>
+				</div>
+              <div id ="map2"></div>
+			 	<div class="citation">Data Source: <a href = "http://transborder.bts.gov/programs/international/transborder/TBDR_QAPC07.html">Data Source: US Dept. of Transportation - Buerau of Transportation Stats</a></div>
+				<div id = "exterior">
+                    <div id = "tradePartner">US Trading Partner: </div>
+                    <div id = "tradeType">Trade Type: </div>
+                    <div>
+						<select id ="partnerSelect"> 
+							<option value = "'CANADA' OR partner ='MEXICO'">CANADA AND MEXICO</option>
+							<option value = "'CANADA'">CANADA</option>
+							<option value = "'MEXICO'">MEXICO</option>
+						</select>
+						<select id ="tradeSelect"> 
+							<option value = "'Total'">TOTAL TRADE</option>
+							<option value = "'Imports'">IMPORTS</option>
+							<option value = "'Exports'">EXPORTS</option>
+						</select>
+					</div>
+						<div id="summary-window">
+							<div class="results"></div>
+							<span class="glyphicon glyphicon-arrow-right" id="statsbutton"></span>
+						</div>
+						<div id="stats-window">
+							<div id="statstitle"></div>
+							<div id="chart1"></div>
+							<div id="chart2"></div>
+							<span class="glyphicon glyphicon-arrow-left" id="sumbutton"></span>
+						</div>
+				</div>	
+				</div>
+			</div>
+		</div>
+		<script id="templateValues" type="x-tmpl-mustache">
+			{{#portname}}
+                  <h3><strong>{{portcity}}, {{portstate}}</strong></h3>
+            {{/portname}}
+            <br>
+            <p>Total Trade: ${{total}}</p>
+            <p>Total Pharmaceutical Trade: ${{ptotal}}</p>
+            <p> % Total Pharmaceutical: {{percenttotal}}%</p><br>
+            <p>Total Imports: ${{imports}}</p>
+            <p>Total Pharmaceutical Imports: ${{pimports}}</p>
+			<p> % Import Pharmaceutical: {{percentim}}%</p><br>
+            <p>Total Exports: ${{exports}}</p>
+            <p>Total Pharmaceutical Exports: ${{pexports}}</p>
+            <p> % Export Pharmaceutical: {{percentex}}%</p>
+  		</script>
+	</body>
+</html>

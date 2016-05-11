@@ -1,0 +1,158 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+html, body, #container, #map, #exterior {
+  height: 100%;
+}
+
+
+#container, #header, #content {
+  width: 100%;
+}		
+
+#content {
+  display: relative;
+  height: 100%;
+}
+
+#map, #exterior {
+  display: inline-block;
+}
+
+#map {
+  width: 70%;
+  float: left;
+}
+
+#slider-box {
+	right: 350px;
+	position: absolute;
+	width: 200px;
+	top: 30px;
+	z-index: 5000;
+}
+
+#slider{
+	top: 10;
+	right: 25px;
+	width: 150px;
+}
+
+#amount {
+	width: 150px;
+	right: 100px;
+	border:0; 
+	background: none; 
+	font-size:120%; 
+	font-weight:bold;
+}
+
+#tradePartner{
+  position: absolute;
+  right: 218px;
+  top: 28px;
+}
+
+#tradeType{
+  position: absolute;
+  right: 90px;
+  top: 28px;
+}
+
+#partnerSelect {
+  background: white;
+  border: 2px solid black;
+  cursor: pointer;
+  height: 30px;
+  padding: 10px;
+  position: absolute;
+  right: 195px;
+  top: 50px;
+  z-index: 5000;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#tradeSelect {
+  background: white;
+  border: 2px solid black;
+  cursor: pointer;
+  height: 30px;
+  padding: 10px;
+  position: absolute;
+  right: 60px;
+  top: 50px;
+  z-index: 5000;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+#exterior {
+  position: absolute;
+  width: 30%;
+  background: #fff;
+  right: 0px;
+  z-index: 30000;
+}
+
+#map2{
+  position: absolute;
+  top: 100px;
+  height: 200px;
+  width: 30%;
+  right: 0px;
+  z-index: 50000;
+}
+
+.results{
+  position: absolute;
+  top: 310px;
+  padding-left: 22px;
+  width: 100%;
+  background: #fff;
+  z-index: 60000;
+  font-size: 115%;
+  line-height: 120%;
+}
+
+.results p{
+  line-height: 30%;
+}
+
+.glyphicon {
+  position: absolute;
+  top: 600px;
+  right: 50px;
+  font-size: 30px;
+  z-index: 70000;
+  cursor: pointer;
+}
+
+#chart1, #chart2 {
+ height: 200;
+ width: 400;
+ position: absolute;
+ z-index: 60000;
+}
+
+#chart1 {
+  left: 3px;
+  top: 150px;
+}
+
+#chart2 {
+  left: 10px;
+  top: 170px;
+}
+
+.citation{
+  position: absolute;
+  left: 10px;
+  top: 660px;
+  font-size: 70%;
+  z-index: 600000;
+}
