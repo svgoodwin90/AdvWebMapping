@@ -27,51 +27,90 @@
   		<script type="text/javascript" src="script.js"></script>
 	</head>
 	<body>
-		<div id = "container">
-			<div id = "content">
-				<div id = "map">
-					<div id= "slider-box">
-						<div id= "year-label">
-					  		<label for="amount">Year: </label>
-					  		<input id="amount" readonly>
-					  	</div>
-						<div id="slider"></div>
-					</div>
-				</div>
-              <div id ="map2"></div>
-			 	<div class="citation">Data Source: <a href = "http://transborder.bts.gov/programs/international/transborder/TBDR_QAPC07.html">Data Source: US Dept. of Transportation - Buerau of Transportation Stats</a></div>
-				<div id = "exterior">
-                    <div id = "tradePartner">US Trading Partner: </div>
-                    <div id = "tradeType">Trade Type: </div>
-                    <div>
-						<select id ="partnerSelect"> 
-							<option value = "'CANADA' OR partner ='MEXICO'">CANADA AND MEXICO</option>
-							<option value = "'CANADA'">CANADA</option>
-							<option value = "'MEXICO'">MEXICO</option>
-						</select>
-						<select id ="tradeSelect"> 
-							<option value = "'Total'">TOTAL TRADE</option>
-							<option value = "'Imports'">IMPORTS</option>
-							<option value = "'Exports'">EXPORTS</option>
-						</select>
-					</div>
-						<div id="summary-window">
-							<div class="results"></div>
-							<span class="glyphicon glyphicon-arrow-right" id="statsbutton"></span>
-						</div>
-						<div id="stats-window">
-							<div id="statstitle"></div>
-							<div id="chart1"></div>
-							<div id="chart2"></div>
-							<span class="glyphicon glyphicon-arrow-left" id="sumbutton"></span>
-						</div>
-				</div>	
-				</div>
+		<div id="map"></div>
+		<div class="legend">
+			<div class="legend-container">
+				<span>$0</span>
+				<div class="circle-a" id="c1a"> </div>
+				<div class="circle-a" id="c2a"></div>
+				<div class="circle-a" id="c3a"></div>
+				<div class="circle-a" id="c4a"></div>
+				<div class="circle-a" id="c5a"></div>
+				<span>$650M</span>
+			</div>
+			<div class="legend-container">
+				<span>0%</span>
+				<div class="circle-b" id="c4b"> </div>
+				<div class="circle-b" id="c1b"></div>
+				<div class="circle-b" id="c3b"></div>
+				<div class="circle-b" id="c5b"></div>
+				<div class="circle-b" id="c2b"></div>
+				<span>65%</span>
 			</div>
 		</div>
+
+		<div id="map2"></div>
+
+		<div class="slider-box"> 
+			<div id= "year-label">Year:  <input id="year-selector" readonly></div>
+			<span class="glyphicon glyphicon-chevron-left" id="timeleft"></span>
+			<span class="glyphicon glyphicon-chevron-right" id="timeright"></span>
+			<div id="slider"></div>
+		</div>
+		<div class="selector-box">
+			<div id="partner-label">Trade Partner:</div>
+			<div id="trade-label">Trade Type:</div>	
+			<select id ="partnerSelect"> 
+				<option value = "'CANADA' OR partner ='MEXICO'">CANADA AND MEXICO</option>
+				<option value = "'CANADA'">CANADA</option>
+				<option value = "'MEXICO'">MEXICO</option>
+			</select>
+			<select id ="tradeSelect"> 
+				<option value = "'Total'">TOTAL TRADE</option>
+				<option value = "'Imports'">IMPORTS</option>
+				<option value = "'Exports'">EXPORTS</option>
+			</select>
+		</div>
+
+		<div class="side-bar">
+			<div class="overview">
+				<h1>Transborder Pharmaceutical</h2>
+				<h2>Locating Trade at America's Land Ports</h3>
+				<h4>
+				<br>Over 13.5 trillion dollars worth of goods legally crossed the northern and southern borders of the United States by truck or train in 2015.
+				Pharmaceutical products comprised approximately 126.7 billion dollars of total trade-value that year, as recorded by the US Department of Transportation.
+				<br><br>
+				This visualization describes the transborder movement of pharmeceutical commodities, classified and documented by the United States, through individual land ports in dollar value. 
+				On the map to the left, the total value of goods moved through an individual border ported is represented by size. The percentage of that value made up by pharmaceutical trade is described through opacity.
+				<br><br>
+				Filter data by desired trade parter and/or trade-type, and use the time-slider to cycle through yearly summaries from 2007-2015.
+				<br><br>
+				To start exploring, click on any port to see more information.
+				</h4>
+			</div>
+			<div class="summary">
+				<div class="results"></div>
+				<span class="glyphicon glyphicon-arrow-right" id="statsbutton1"></span>
+			</div>
+			<div class="statistics">
+				<div id="stats-label"></div>
+				<div id="chart1label"><p><strong>Total Trade Value,  2007-2015</strong></p></div>
+				<div id="chart1"></div>
+				<div id="chart2label"><p><strong>Pharmaceutical Trade Value,  2007-2015</strong></p></div>
+				<div id="chart2"></div>
+				<span class="glyphicon glyphicon-arrow-left" id="sumbutton"></span>
+				<div id="sourcebutton">Sources</div>
+			</div>
+			<div class="sources">
+				All data was sourced from the United States Department of Transportation's Bureau of Transportation Statistics. Land ports along the northern and southern US Borders were selected, and truck and train freight data aggregated to determine the value of commodity movements through each port (including ferry ports). The datasets utilized may be found here: <br> <br> <a href="http://transborder.bts.gov/programs/international/transborder/TBDR_QA.html">North American Transborder Freight Data, including Port, Commodity, or State Origin/Destination</a> <br><br>and here: <br><br> <a href="http://transborder.bts.gov/programs/international/transborder/TBDR_QAPC07.html">North American Transborder Freight Data: Port and Commodity Data.</a>
+			<span class="glyphicon glyphicon-arrow-left" id="statsbutton2"></span>
+			</div>
+		</div>
+
+	</body>
 		<script id="templateValues" type="x-tmpl-mustache">
 			{{#portname}}
-                  <h3><strong>{{portcity}}, {{portstate}}</strong></h3>
+                  <h3><strong>{{portcity}}, {{portstate}}</strong></h3><p id="info-year">{{year}}</p>
             {{/portname}}
             <br>
             <p>Total Trade: ${{total}}</p>
@@ -84,5 +123,10 @@
             <p>Total Pharmaceutical Exports: ${{pexports}}</p>
             <p> % Export Pharmaceutical: {{percentex}}%</p>
   		</script>
-	</body>
+  		<script id="templateValues2" type="x-tmpl-mustache">
+			{{#portname}}
+                  <h3><strong>{{portcity}}, {{portstate}}</strong></h3>
+            {{/portname}}
+		</script>
+
 </html>
