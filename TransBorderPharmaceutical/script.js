@@ -78,7 +78,6 @@ $(document).ready(function() {
 				loadWindowInfo = function() {
 					sql.execute("SELECT * FROM americanborder_trade WHERE portcode =" + data.portcode + "AND year =" + year + "ORDER BY percent DESC")
 						.done(function(data) {
-							console.log(data);
 							var template = $('#templateValues').html();
 							var context = {
 								year: year,
