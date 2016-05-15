@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  {% include head.html %}
+  <link rel="stylesheet" href="{{ "css/navbar.css" | prepend: site.baseurl }}">
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="{{ site.baseurl }}">{{ site.class.short }} – {{ site.class.term }}</a>
+      <a class="navbar-brand" href="{{ site.baseurl }}about.html">About</a>
+    </div>
+  </nav>
+
+  <div id="main" class="container">
+
+    <div class="header">
+      <h1>{{ site.class.short }} – {{ site.class.term }} – Student Projects</h1>
+      <p class="lead">
+      {% if site.class.link %}
+        Final projects for <a href="{{ site.class.link }}" target="_blank">{{ site.class.long }}</a>.
+      {% else %}
+        Final projects for {{ site.class.long }}.
+      {% endif %}
+      </p>
+      <hr>
+    </div>
+
+    <div class="grid-wrapper">
+      {{ content }}
+    </div>
+
+    {% include footer.html %}
+
+  </div>
+</body>
+</html>
